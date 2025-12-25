@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title >MOHA AGENCY – Premium Visa Service</title>
+
+<style>
+/* ===== Reset ===== */
+*{
+  margin:0; padding:0; box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Body ===== */
+body{
+  background-image:url("SAWIR.jpg"); /* Halkan ka beddel marka aad soo dirsato sawirka */
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+  min-height:100vh;
+  color:white;
+}
+
+/* ===== Glass Effect ===== */
+.glass{
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+  border-radius:18px;
+}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+nav .logo{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-shadow:0 4px 10px rgba(0,0,0,0.6);
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:28px;
+}
+
+nav ul li a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  font-size:17px;
+  padding:8px 16px;
+  border-radius:10px;
+  transition:.35s;
+}
+
+nav ul li a:hover{
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(5px);
+  transform:translateY(-3px);
+}
+
+/* Login Button special */
+.btn-login{
+  background:#0084ff;
+  padding:10px 18px;
+  border-radius:10px;
+}
+
+/* ===== Hero Section ===== */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 60px;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.80));
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero h1{
+  font-size:55px;
+  line-height:1.1;
+  margin-bottom:15px;
+  text-shadow:0 6px 20px #000;
+  animation:fadeDown 1s ease forwards;
+}
+
+.hero p{
+  font-size:20px;
+  margin-bottom:25px;
+  color:#e7e7e7;
+  animation:fadeUp 1.2s ease forwards;
+}
+
+.cta{
+  display:flex;
+  gap:18px;
+}
+
+.cta a{
+  text-decoration:none;
+  color:white;
+  background:#0084ff;
+  padding:14px 24px;
+  border-radius:14px;
+  font-weight:700;
+  transition:0.3s;
+  box-shadow:0 6px 15px rgba(0,132,255,0.4);
+}
+
+.cta a:hover{
+  transform:translateY(-4px);
+  background:#006bd1;
+}
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(25px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== Section Style ===== */
+section{
+  padding:100px 40px;
+}
+
+section h2{
+  font-size:36px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+section p{
+  max-width:750px;
+  margin:auto;
+  font-size:18px;
+  text-align:center;
+  color:#e5e5e5;
+}
+
+/* ===== Contact Box ===== */
+.contact-box{
+  margin-top:30px;
+  max-width:460px;
+  padding:30px;
+  margin:auto;
+}
+
+.contact-box p{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+/* ===== Login Popup ===== */
+#loginPopup{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.3s;
+  z-index:2000;
+}
+
+#loginPopup.active{
+  visibility:visible;
+  opacity:1;
+}
+
+.popup-box{
+  width:360px;
+  padding:30px;
+  background:white;
+  color:black;
+  border-radius:18px;
+  animation:pop .35s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.7); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+.popup-box h3{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.popup-box input{
+  width:100%;
+  padding:14px;
+  margin:12px 0;
+  font-size:16px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+.popup-box button{
+  width:100%;
+  padding:14px;
+  background:#0084ff;
+  border:none;
+  color:white;
+  border-radius:10px;
+  font-weight:700;
+  font-size:16px;
+}
+
+.close{
+  margin-top:14px;
+  text-align:center;
+  color:#333;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:60px;
+  background:rgba(0,0,0,0.75);
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="glass">
+  <div class="logo" style="color: rgb(175, 79, 5);font-family: Algerian;">MOHA AGENCY</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a class="btn-login" onclick="openLogin()">Login</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h1 style="color:rgb(175, 79, 5); font-family: Gill Sans Ultra Bold;">MOHA AGENCY <br> Visa & Travel Service</h1>
+    <p>Waxaan bixinaa Visa Yurub, USA, Canada & Afrika. Sidoo kale tigidhada Afrika oo dhan – adeeg premium ah oo degdeg ah.</p>
+
+    <div class="cta">
+      <a href="#contact">Nala Soo Xiriir</a>
+      <a href="#about" style="background:#ffffff40;">Wax badan ogow</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="glass">
+  <h2>About Us</h2>
+  <p style="font-family: Times New Roman', Times, serif; color: #000; font-size: 25px;"> MOHA AGENCY waxay ku taalaa Hargeysa – Suuqa Hoose. Waxaan ku takhasusnay adeegyada Visa, Tigidhada iyo La-talinta safarka.</p>
+  <P> Waxa lagu so dhawayn doona si qurux badan oo aad ka hesho  </P>
+  <br>
+  <p style="font-family: Arial Black: #000; font-size: 32px;color: #000;"> " Baan qaad ka socda Mulkilaha shirkada, <br> Hadii aad ka dalbato tigidhka shirkada labo jeer waxad heli donta mid free ah " </p>
+  <p style="color: #000; font-size: 35px; font-family: Algerian;"> MULKIILHA: Mohamed Siciid Maxamuud </p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="glass">
+  <h2>Contact Us</h2>
+
+  <div class="contact-box glass">
+    <p><b>Magaca:</b> Mohamed Siciid Mohamuud</p>
+    <p><b>Telefoon:</b> +252 63 7015145</p>
+    <p><b>Goobta:</b> Hargeysa, Somaliland – Suuqa Hoose</p>
+    <p><b>Email:</b> info@mohagency.com</p>
+  </div>
+</section>
+
+<!-- LOGIN POPUP -->
+<div id="loginPopup">
+  <div class="popup-box">
+    <h3>Login</h3>
+
+    <input type="text" id="loginUser" placeholder="Username">
+    <div class="error" id="loginUserError"></div>
+
+    <input type="password" id="loginPass" placeholder="Password">
+    <div class="error" id="loginPassError"></div>
+
+    <button onclick="loginValidate()">Login Now</button>
+    <div class="close" onclick="closeLogin()">Close</div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  © 2025 – MOHA AGENCY | Hargeysa, Somaliland
+</footer>
+
+<script>
+function openLogin(){
+  document.getElementById("loginPopup").classList.add("active");
+}
+function closeLogin(){
+  document.getElementById("loginPopup").classList.remove("active");
+}
+</script>
+<script>
+function openLogin(){
+  document.getElementById("loginPopup").classList.add("active");
+}
+
+function closeLogin(){
+  document.getElementById("loginPopup").classList.remove("active");
+}
+
+/* LOGIN VALIDATION KELIYA */
+function loginValidate(){
+  let valid = true;
+
+  let user = document.getElementById("loginUser").value.trim();
+  let pass = document.getElementById("loginPass").value;
+
+  document.getElementById("loginUserError").innerHTML = "";
+  document.getElementById("loginPassError").innerHTML = "";
+
+  if(user.length < 3){
+    document.getElementById("loginUserError").innerHTML =
+      "Username ugu yaraan 3 xaraf";
+    valid = false;
+  }
+
+  if(pass.length < 6){
+    document.getElementById("loginPassError").innerHTML =
+      "Password ugu yaraan 6 xaraf";
+    valid = false;
+  }
+
+  if(valid){
+    alert("Login Success ✔");
+    closeLogin();
+  }
+}
+</script>
+</body>
+</html>
